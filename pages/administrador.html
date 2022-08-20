@@ -41,7 +41,9 @@
     <h1 class="display-4 mt-5 text-center">Administrador de Series</h1>
     <hr>
     <article class="container">
-        <p>Opciones: <button type="button" class="btn btn-outline-primary"><i class="bi bi-clipboard-plus"></i></button></p>
+        <p class="fs-5">Opciones: <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#formularioLabel">
+            <i class="bi bi-clipboard-plus"></i>
+          </button></p>
     </article>
     <article class="container">
         <h2 class="display-5 mt-4">Lista de Series</h2>
@@ -53,7 +55,7 @@
               <tr>
                 <th scope="col">Cod</th>
                 <th scope="col">Titulo</th>
-                <th scope="col">Descripcion</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Genero</th>
                 <th scope="col">Acción</th>
@@ -67,7 +69,7 @@
                 <td>https://pics.filmaffinity.com/bojack_horseman-687229611-mmed.jpg</td>
                 <td>Animación</td>
                 <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>
+                    <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>
               </tr>
               <tr>
                 <th scope="row">2</th>
@@ -76,7 +78,7 @@
                 <td>https://pics.filmaffinity.com/the_simpsons-397676780-mmed.jpg</td>
                 <td>Animación</td>
                 <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>
+                    <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>
               </tr>
               <tr>
                 <th scope="row">3</th>
@@ -85,7 +87,7 @@
                 <td>https://pics.filmaffinity.com/the_midnight_gospel-485347718-mmed.jpg</td>
                 <td>Animación</td>
                 <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+                    <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
               <tr>
                 <th scope="row">3</th>
                 <td>Rick and Morty</td>
@@ -93,7 +95,7 @@
                 <td>https://pics.filmaffinity.com/rick_and_morty-157026175-mmed.jpg</td>
                 <td>Animación</td>
                 <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+                    <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
               <tr>
                 <th scope="row">3</th>
                 <td>Shrek</td>
@@ -101,10 +103,52 @@
                 <td>https://pics.filmaffinity.com/shrek-903764423-mmed.jpg</td>
                 <td>Animación</td>
                 <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+                    <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
             </tbody>
           </table>
-    </section>
+    </section>  
+  <!-- Modal -->
+  <div class="modal fade" id="formularioLabel" tabindex="-1" aria-labelledby="#formularioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Administrar Serie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="codigoPelicula" class="form-label">Código</label>
+                  <input type="text" class="form-control" id="codigo" placeholder="123" required>
+                </div>
+                <div class="mb-3">
+                  <label for="tituloPelicula" class="form-label">Título</label>
+                  <input type="text" class="form-control" id="titulo" placeholder="Ej: The Simpsons" required>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcionPelicula" class="form-label">Descripción</label>
+                    <textarea id="descripcion" rows="4" class="form-control" placeholder="Lorem ipsum dolor sit amet." minlength="30" maxlength="500" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imagenPelicula" class="form-label">Imagen</label>
+                    <input type="text" class="form-control" id="imagen" placeholder="Ej:https://pics.filmaffinity.com/the_simpsons-397676780-mmed.jpg" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="generoPelicula" class="form-label">Genero</label>
+                    <select id="genero" class="form-control" required>
+                        <option value="">Seleccione una opcion</option>
+                        <option value="F">Fantasía</option>
+                        <option value="A">Animación</option>
+                        <option value="D">Drama</option>
+                        <option value="C">Crimen</option>
+                      </select>
+                  </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 <footer class="py-4 bg-dark text-light text-center">
     <p>&copy; Todos los derechos reservados</p>
