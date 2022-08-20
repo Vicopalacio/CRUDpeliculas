@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="pagina de peliculas">
+    <meta name="keywords" content="peliculas, formulario, practica">
+    <meta name="description" content="Victoria Palacio Fernández">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-light" href="#">Peliculas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text text-light" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text text-light active" aria-current="page" href="#">Administrador</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1 class="display-4 mt-5 text-center">Administrador de Series</h1>
+    <hr>
+    <article class="container">
+        <p>Opciones: <button type="button" class="btn btn-outline-primary"><i class="bi bi-clipboard-plus"></i></button></p>
+    </article>
+    <article class="container">
+        <h2 class="display-5 mt-4">Lista de Series</h2>
+<hr>
+    </article>
+    <section class="container">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Cod</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Bojack Horseman</td>
+                <td>En un mundo donde humanos y animales antropomórficos conviven, el protagonista de la serie es el caballo BoJack Horseman (Will Arnett), protagonista de la telecomedia "Horsin' Around" en la década de los 90. Después de años de decadencia y una tormentosa vida personal, BoJack se propone volver al candelero a través de una autobiografía para la que contará con ayuda de una escritora fantasma, Diane Nguyen (Alison Brie). Pero BoJack también tendrá que lidiar con las exigencias de su exnovia y agente, la gata Princess Carolyn, su compañero de piso, Todd Chávez, y su amienemigo Mr. Peanutbutter, un perro labrador que es novio de Diane y triunfó con una sitcom muy similar a "Horsin' Around".</td>
+                <td>https://pics.filmaffinity.com/bojack_horseman-687229611-mmed.jpg</td>
+                <td>Animación</td>
+                <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>The Simpsons</td>
+                <td>Narra la historia de una peculiar familia (Homer, Marge, Bart, Maggie y Lisa Simpson) y otros divertidos personajes de la localidad norteamericana de Springfield. Homer, el padre, es un desastroso inspector de seguridad de una central nuclear. Marge, la madre, es un ama de casa acostumbrada a soportar a su peculiar familia. Bart, de 10 años, intenta divertirse con travesuras de todo tipo. Lisa es la más inteligente de la familia, y Maggie, la más pequeña, es un bebé que todavía no habla, pero que juega un importante papel.</td>
+                <td>https://pics.filmaffinity.com/the_simpsons-397676780-mmed.jpg</td>
+                <td>Animación</td>
+                <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>The Midnight Gospel</td>
+                <td>Clancy, un transmisor espacial con un fallo en su simulador de multiversos, deja el confort de su hogar para entrevistar a seres que viven en mundos agonizantes.</td>
+                <td>https://pics.filmaffinity.com/the_midnight_gospel-485347718-mmed.jpg</td>
+                <td>Animación</td>
+                <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Rick and Morty</td>
+                <td>Comedia animada que narra las aventuras de un científico loco, Rick Sánchez, que regresa después de 20 años para vivir con su hija, su marido y sus hijos, Morty y Summer.</td>
+                <td>https://pics.filmaffinity.com/rick_and_morty-157026175-mmed.jpg</td>
+                <td>Animación</td>
+                <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Shrek</td>
+                <td>Hace mucho tiempo, en una lejanísima ciénaga, vivía un feroz ogro llamado Shrek. De repente, un día, su soledad se ve interrumpida por una invasión de sorprendentes personajes. Hay ratoncitos ciegos en su comida, un enorme y malísimo lobo en su cama, tres cerditos sin hogar y otros seres que han sido deportados de su tierra por el malvado Lord Farquaad. Para salvar su territorio, Shrek hace un pacto con Farquaad y emprende viaje para conseguir que la bella princesa Fiona acceda a ser la novia del Lord. En tan importante misión le acompaña un divertido burro, dispuesto a hacer cualquier cosa por Shrek: todo, menos guardar silencio.</td>
+                <td>https://pics.filmaffinity.com/shrek-903764423-mmed.jpg</td>
+                <td>Animación</td>
+                <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square fs-5"></i></button></td>              </tr>
+            </tbody>
+          </table>
+    </section>
+</main>
+<footer class="py-4 bg-dark text-light text-center">
+    <p>&copy; Todos los derechos reservados</p>
+</footer>
+
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
