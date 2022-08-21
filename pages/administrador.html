@@ -18,7 +18,7 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container">
-            <a class="navbar-brand text-light" href="#">Peliculas</a>
+            <a class="navbar-brand text-light" href="../index.html">Peliculas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text text-light" href="#">Inicio</a>
+                        <a class="nav-link text text-light" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text text-light active" aria-current="page" href="#">Administrador</a>
+                        <a class="nav-link text text-light active" aria-current="page" href="../pages/administrador.html">Administrador</a>
                     </li>
                 </ul>
             </div>
@@ -116,7 +116,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="formPeliculas">
                 <div class="mb-3">
                   <label for="codigoPelicula" class="form-label">Código</label>
                   <input type="text" class="form-control" id="codigo" placeholder="123" required>
@@ -134,7 +134,7 @@
                     <input type="text" class="form-control" id="imagen" placeholder="Ej:https://pics.filmaffinity.com/the_simpsons-397676780-mmed.jpg" required>
                   </div>
                   <div class="mb-3">
-                    <label for="generoPelicula" class="form-label">Genero</label>
+                    <label for="generoPelicula" class="form-label" aria-required="true">Genero</label>
                     <select id="genero" class="form-control" required>
                         <option value="">Seleccione una opcion</option>
                         <option value="F">Fantasía</option>
