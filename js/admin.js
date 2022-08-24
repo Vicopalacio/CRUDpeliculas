@@ -1,6 +1,6 @@
 import { Pelicula } from "./classPelicula.js";
 
-let listaPeliculas = [];
+let listaPeliculas = JSON.parse(localStorage.getItem("listaPeliculasKey")) || [];
 
 //codigo para instanciar una ventana modal
 const modalPelicula = new bootstrap.Modal(
@@ -42,6 +42,7 @@ function guardarPelicula(e) {
   //guardar la pelicula en el arreglo
   listaPeliculas.push(nuevaPelicula);
   console.log(listaPeliculas);
+  guardarPeliculasEnLocalStorge();
   //limpiar formulario
   limpiarFormulario();
   //cerrar ventana modal
@@ -55,3 +56,7 @@ function limpiarFormulario() {
   imagen.className = "form-control";
   genero.className = "form-control";
 }
+
+function guardarPeliculasEnLocalStorge(){
+  localStorage.setItem("listaPeliculasKey", JSON.stringify(listaPeliculas))
+};
