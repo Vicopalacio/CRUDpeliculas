@@ -20,6 +20,28 @@ let formulario = document.getElementById("formPeliculas");
 btnCrearPelicula.addEventListener("click", mostrarFormulario);
 formulario.addEventListener("submit", guardarPelicula);
 
+cargaInicial();
+//muestre la tabla con datos
+function cargaInicial(){
+  if(listaPeliculas.length >0){
+    //dibujar filas de la tabla
+    listaPeliculas.forEach((itemPelicula)=>{crearFila(itemPelicula)})
+  }
+}
+
+function crearFila(pelicula){
+  let tablaPeliculas = document.getElementById("tablaPeliculas");
+  tablaPeliculas.innerHTML += `<tr>
+  <th scope="row">${pelicula.codigo}</th>
+  <td>${pelicula.titulo}</td>
+  <td class="parrafo">${pelicula.descripcion}</td>
+  <td>${pelicula.imagen}</td>
+  <td>${pelicula.genero}</td>
+  <td><button type="button" class="btn btn-danger"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
+      <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>
+</tr>`
+}
+
 function mostrarFormulario() {
   modalPelicula.show();
   //mostrar el identificador unico cargado en el input correspondiente
