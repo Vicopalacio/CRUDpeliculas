@@ -38,7 +38,7 @@ function crearFila(pelicula){
   <td>${pelicula.imagen}</td>
   <td>${pelicula.genero}</td>
   <td><button type="button" class="btn btn-danger" onclick="borrarPelicula('${pelicula.codigo}')"><i class="bi bi-file-x-fill colorIncono fs-5"></i></button>
-      <button type="button" class="btn btn-warning mt-2"><i class="bi bi-pencil-square fs-5"></i></button></td>
+      <button type="button" class="btn btn-warning mt-2" onclick="editarPelicula('${pelicula.codigo}')"><i class="bi bi-pencil-square fs-5"></i></button></td>
 </tr>`
 }
 
@@ -121,4 +121,19 @@ window.borrarPelicula = function (codigo){
 function borrarTabla(){
   let tablaPeliculas = document.getElementById("tablaPeliculas");
   tablaPeliculas.innerHTML = "";
+}
+
+window.editarPelicula = function (codigoBuscado){
+  //buscar del arreglo de peliculas, la pelicula seleccionada
+  let peliculaBuscada = listaPeliculas.find((pelicula)=>{return pelicula.codigo === codigoBuscado});
+  //let peliculaBuscada = listaPeliculas.find((pelicula)=>pelicula.codigo === codigo) podemos obviar el return cuando solo tenemos la condicion logica.
+
+  //cargar los datos de la pelicula seleccionada en el formulario
+  codigo.value = peliculaBuscada.codigo;
+  titulo.value = peliculaBuscada.titulo;
+  descripcion.value = peliculaBuscada.descripcion;
+  imagen.value = peliculaBuscada.imagen;
+  genero.value = peliculaBuscada.genero;
+  //abrir ventana modal
+  modalPelicula.show();
 }
