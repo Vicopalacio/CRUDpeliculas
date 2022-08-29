@@ -87,15 +87,35 @@ function guardarPeliculasEnLocalStorge(){
 
 window.borrarPelicula = function (codigo){
   console.log(codigo);
-  //buscar la pelicula con el codigo indicado en el arreglo y borrarlo
-  let copiaListaPeliculas = listaPeliculas.filter((pelicula)=>{return pelicula.codigo != codigo})
-  console.log(copiaListaPeliculas);
-  listaPeliculas = copiaListaPeliculas;
-  //actualizar el localstorage
-  guardarPeliculasEnLocalStorge();
-  //actualizar la tabla
-  borrarTabla();
-  cargaInicial();
+  Swal.fire({
+    title: 'Eliminar Pelicula',
+    text: "Estas seguro que quieres eliminar esta pelicula? No se puede revertir este paso.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: "Borrar",
+    CancelButtonText: "Cancelar"
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      //buscar la pelicula con el codigo indicado en el arreglo y borrarlo
+      let copiaListaPeliculas = listaPeliculas.filter((pelicula)=>{return pelicula.codigo != codigo})
+      console.log(copiaListaPeliculas);
+      listaPeliculas = copiaListaPeliculas;
+      //actualizar el localstorage
+      guardarPeliculasEnLocalStorge();
+      //actualizar la tabla
+      borrarTabla();
+      cargaInicial();
+
+      Swal.fire(
+        'Pelicula Borrada!',
+        'La pelicula ha sido eliminada con éxito!',
+        'success'
+      )
+    }
+  })
 }
 
 function borrarTabla(){
