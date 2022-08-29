@@ -46,6 +46,7 @@ function crearFila(pelicula){
 
 function mostrarFormulario() {
   peliculaNueva = true;
+  limpiarFormulario();
   modalPelicula.show();
   //mostrar el identificador unico cargado en el input correspondiente
   codigo.value = uuidv4();
@@ -138,6 +139,7 @@ function borrarTabla(){
 
 window.editarPelicula = function (codigoBuscado){
   peliculaNueva = false;
+  limpiarFormulario();
   //buscar del arreglo de peliculas, la pelicula seleccionada
   let peliculaBuscada = listaPeliculas.find((pelicula)=>{return pelicula.codigo === codigoBuscado});
   //let peliculaBuscada = listaPeliculas.find((pelicula)=>pelicula.codigo === codigo) podemos obviar el return cuando solo tenemos la condicion logica.
@@ -161,11 +163,23 @@ function actualizarPelicula(){
   listaPeliculas[posicionPeliBuscada].descripcion = descripcion.value;
   listaPeliculas[posicionPeliBuscada].imagen = imagen.value;
   listaPeliculas[posicionPeliBuscada].genero = genero.value;
+
   //actualizar el localStorage
   guardarPeliculasEnLocalStorge();
+
   //actualizar la tabla
   borrarTabla();
   cargaInicial();
+
   //quiero que se cierre la ventana modal
   modalPelicula.hide();//para ocultar la ventana modal
+
+  //limpiar formulario
+  limpiarFormulario();
+
+  //indicarle lo que sucedio al usuario
+  Swal.fire(
+    'Pelicula Modificada!',
+    'La pelicula ha sido modificada con éxito!',
+    'success')
 }
