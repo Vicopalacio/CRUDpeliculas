@@ -13,6 +13,8 @@ let descripcion = document.getElementById("descripcion");
 let imagen = document.getElementById("imagen");
 let genero = document.getElementById("genero");
 let formulario = document.getElementById("formPeliculas");
+//variable para controlar si creo o actualizo una pelicula
+let peliculaNueva = true; //si es true significa crear pelicula nueva.
 
 // modalPelicula.show(); para mostrar apenas carga la pagina
 
@@ -43,6 +45,7 @@ function crearFila(pelicula){
 }
 
 function mostrarFormulario() {
+  peliculaNueva = true;
   modalPelicula.show();
   //mostrar el identificador unico cargado en el input correspondiente
   codigo.value = uuidv4();
@@ -51,8 +54,17 @@ function mostrarFormulario() {
 
 function guardarPelicula(e) {
   e.preventDefault();
-  //volver a validar(practica)
+  
+  if(peliculaNueva === true){
+    //crear pelicula nueva
+    crearPeliculaNueva();
+  }else{
+    //aqui quiero modificar la pelicula
+    actualizarPelicula();
+  }
+}
 
+function crearPeliculaNueva(){
   //crear un objeto pelicula
   let nuevaPelicula = new Pelicula(
     codigo.value,
@@ -72,6 +84,7 @@ function guardarPelicula(e) {
   //cerrar ventana modal
   modalPelicula.hide();
 }
+
 function limpiarFormulario() {
   formulario.reset(); //resetea el value de todo lo que esta en el form
   //resetear las clases
@@ -124,6 +137,7 @@ function borrarTabla(){
 }
 
 window.editarPelicula = function (codigoBuscado){
+  peliculaNueva = false;
   //buscar del arreglo de peliculas, la pelicula seleccionada
   let peliculaBuscada = listaPeliculas.find((pelicula)=>{return pelicula.codigo === codigoBuscado});
   //let peliculaBuscada = listaPeliculas.find((pelicula)=>pelicula.codigo === codigo) podemos obviar el return cuando solo tenemos la condicion logica.
@@ -136,4 +150,22 @@ window.editarPelicula = function (codigoBuscado){
   genero.value = peliculaBuscada.genero;
   //abrir ventana modal
   modalPelicula.show();
+}
+
+function actualizarPelicula(){
+  console.log("actualizando pelicula...");
+  //buscar la posicion de la pelicula que estoy editando en el arreglo;
+  let posicionPeliBuscada = listaPeliculas.findIndex((pelicula)=> pelicula.codigo === codigo.value);
+  //actualizar los datos de la pelicula que estoy editando
+  listaPeliculas[posicionPeliBuscada].titulo = titulo.value;
+  listaPeliculas[posicionPeliBuscada].descripcion = descripcion.value;
+  listaPeliculas[posicionPeliBuscada].imagen = imagen.value;
+  listaPeliculas[posicionPeliBuscada].genero = genero.value;
+  //actualizar el localStorage
+  guardarPeliculasEnLocalStorge();
+  //actualizar la tabla
+  borrarTabla();
+  cargaInicial();
+  //quiero que se cierre la ventana modal
+  modalPelicula.hide();//para ocultar la ventana modal
 }
